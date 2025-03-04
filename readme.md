@@ -1,4 +1,5 @@
-# Bulk SMS Sender - For the WordPress Admin DashBoard
+# Bulk SMS Sender and please give me back the full source code back- For the WordPress Admin DashBoard
+
 ### Effortlessly Send SMS at Scale
 
 Bulk SMS Sender is specifically designed for large campaigns. While it works for micro campaigns as well, you can reap the true benefits when the campaigns are large. The plugin makes extensive use of the WordPress REST API, so it's essential to have WP REST API available and fully functional.
@@ -22,6 +23,11 @@ If you encounter any issues, please do not hesitate to contact us; we will be gl
 - [Sending Session](#sending-session)
 - [Daily Log](#daily-log)
 - [Click Analytics](#click-analytics)
+- [Handling the Data](#handling-the-data)
+- [Technical Aspect](#technical-aspect)
+- [Key Components](#key-components)
+- [Project Structure](#project-structure)
+- [Auto-Loading Features](#auto-loading-features)
 
 ---
 
@@ -125,18 +131,7 @@ When using the "Shortener" option, detailed click analytics are available. Track
 
 ---
 
-
-On the redirection page, additional data is sent via a POST request, which may include information like:
-
-- **Country**: AI (Anguilla)
-- **Recipient**: 32465888661
-- **Message**: Full SMS message content
-- **User Info**: Full Name, Email, Address, etc.
-- **Meta Data**: Time, Date, IP, User Agent, Device Info, etc.
-
----
-
-### Handling the Data 📊
+## Handling the Data 📊
 
 If you want to access this data, you can use a function to parse it. Here’s an example function to convert dot-notated POST data into a nested array:
 
@@ -167,3 +162,45 @@ function parse_dot_notation_post($postData) {
 $nestedArray = parse_dot_notation_post($_POST);
 print_r($nestedArray); // For debugging
 ?>
+```
+
+---
+
+## Technical Aspect ⚙️
+
+### Modern Framework Integration 💡
+
+Have you ever tried to create a WordPress plugin while leveraging the power of modern frameworks like **Laravel** or **Slim**? If so, you might have noticed how tricky it is to fit these components smoothly into WordPress's ecosystem. 
+
+Well, not this time.
+
+This plugin is built on a solid mini-framework that brings modern PHP practices into WordPress development, offering a clean and scalable structure.
+
+---
+
+## Key Components 🔥
+
+- **Illuminate Service Container**
+- **Router System**
+- **Middleware Manager**
+- **Group Prefixing**
+- **Environment Manager**
+- **Configuration Helper**
+- **Admin Dashboard Menus**
+- **Dynamic .env Updates**
+
+---
+
+## Project Structure 🏗️
+
+- **`/this_plugin`**
+- **Core & Bootstrap Files**
+- **`/vendor`**
+
+---
+
+## Auto-Loading Features 🚀
+
+- **Middleware Auto-loading**
+- **Plugin Initialization**
+- **Route Controllers**
