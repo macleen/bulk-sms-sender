@@ -206,8 +206,8 @@ This plugin is built on a solid mini-framework that brings modern PHP practices 
 - **Route Controllers**
 
 
-📚 For any inquiries do not hesitate to contact me on:
-📚 MacLeen / Chokri Mahmoud
-📚 email: acutclub@gmail.com
-
+📚 For any inquiries do not hesitate to contact me on:  
+📚 MacLeen / Chokri Mahmoud  
+📚 email: acutclub@gmail.com  
+  
 Have a nice day :)
