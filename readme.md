@@ -1,5 +1,4 @@
-# Bulk SMS Sender and please give me back the full source code back- For the WordPress Admin DashBoard
-
+# Bulk SMS Sender for the WordPress admin dashboard
 ### Effortlessly Send SMS at Scale
 
 Bulk SMS Sender is specifically designed for large campaigns. While it works for micro campaigns as well, you can reap the true benefits when the campaigns are large. The plugin makes extensive use of the WordPress REST API, so it's essential to have WP REST API available and fully functional.
