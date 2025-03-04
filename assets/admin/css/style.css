@@ -1,0 +1,809 @@
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+
+.preloader-wrapper {
+    display: flex; /* Ensure it takes up space */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 9999997;
+    background-color: rgba(36, 39, 53, 0.7); /* Increase opacity */
+}
+.preloader-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	z-index: 9999998;
+}
+.spinner {
+    width: 90px;
+    height: 90px;
+    border: 6px solid rgba(255, 255, 255, 0.2); /* Make border more visible */
+    border-top: 6px solid red; /* Ensure spinner is clearly visible */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+	z-index: 9999999;
+}
+
+
+  
+/* Keyframes for spinning animation */
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+.scrollbar {
+	max-height: 300px; /* Example height for overflow */
+	overflow-y: auto !important; /* Enables vertical scrolling */
+}
+
+/* Webkit-based browsers */
+.scrollbar::-webkit-scrollbar {
+	width: 8px;
+
+}
+
+.scrollbar::-webkit-scrollbar-track {
+	background: #e0e0e0;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+	background: #007bff; /* Thumb color */
+	border-radius: 4px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+	background: #0056b3; /* Darker blue on hover */
+}
+
+input:not(.action-button):not([type="radio"]):not([type="checkbox"]),
+select, textarea {
+	width: 100% !important;
+}
+.viewable-area {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin-left: -2vw;
+	margin-top: -2vh;
+	padding-bottom: 40vh;
+	height: 100%;
+	color:white;
+	font-family: montserrat, arial, verdana;
+	background-color: #151726 !important;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.is-disabled {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+.is-enabled {
+	pointer-events: auto;
+	opacity: 1;
+}
+
+::-webkit-scrollbar {
+	width: 15px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #533226db;
+	border-radius: 20px;
+	border: 6px solid transparent;
+	background-clip: content-box;
+}
+
+/*form styles*/
+#msform {
+	width: 80%;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+#msform .ajax-loader-box {
+	min-width: 100%;
+    width: 100%;
+    text-align: center;
+    min-height: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    padding-top: 1%;
+}
+
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+
+
+#msform fieldset > div.panel-footer {
+    position: absolute;
+    text-align: center;
+    font-size: 10px;
+    color: #0a0a0be3;
+    width: 93%;
+    font-family: 'Montserrat';
+    margin-top: 5px;
+}
+
+/* #msform fieldset > div.panel-footer::after {
+	content: 'SMS Connector v4.2 - By macLeen Soft 2023 all rights reserved.';
+} */
+
+
+/*inputs*/
+#msform input, #msform select, #msform textarea {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 1.1rem;
+	max-width: 100% !important;
+}
+
+#msform textarea {
+    outline: none !important;
+    resize: none;
+	padding-left: 70px !important;
+}
+
+#msform select:disabled,
+#msform input:disabled,
+#msform textarea:disabled {
+	background-color: #a7aeb524;
+	color: #0000007d;
+}
+
+
+
+#msform input[type='radio'] { 
+	width: 1.4vw !important;
+	display: inline-block;
+	transform: scale(2);
+    margin: 0.5rem 0rem 1rem 0rem;
+}
+
+.msg-model {
+	border: 1px gray solid !important;
+	width: 25% !important;
+	max-width: 25% !important;
+	text-align: center !important;
+}
+/*buttons*/
+
+
+#msform .action-button {
+	width: 140px;
+	background: #27AE60;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+
+#msform .stop-button {
+	background: #e55d5d !important;
+}
+
+#msform .pause-button {
+	background: #0a49d0 !important;
+}
+
+
+#msform .resume-button {
+	background: #037217 !important;
+}
+
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+
+#msform table {
+	margin: 2% auto;
+    text-align: left;	
+}
+
+#msform table tbody tr td {
+	font-size:0.9rem;
+	border: 1px gray solid;
+	padding: 10px 20px;
+}	
+
+
+#msform table#preview-content tbody tr td {
+	color: black
+}	
+
+
+#msform table#preview-content tbody tr td.review {
+	color: #088507;
+	font-weight: bold;
+}	
+
+
+
+
+
+
+
+
+
+span.author {
+    text-align: center;
+    font-size: 0.6rem;
+    color: #effa0699;
+    margin-top: -2.5rem;
+    margin-bottom: 1rem;
+}	
+
+span.author::after {
+	content: 'MacLeen v4.2';
+}
+
+
+#msform table tbody.place-holder-element tr td {
+	font-size:0.9rem;
+	border: none;
+	padding: 10px 20px;
+}	
+
+#msform table.tags-table{
+	margin: 2% auto;
+	text-align: left;
+	width: 100%;
+}	
+
+#msform table.tags-table tbody tr td {
+    font-size: 0.9rem;
+    border: none;
+    padding: 10px 20px;
+}	
+
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+    color: #f1e9e9;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 11%;
+    float: left;
+    position: relative;
+
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: rgb(255, 255, 255);
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #27AE60;
+	color: white;
+	
+}
+
+.composed-message-container {
+    width: 100%;
+    min-height: 3rem;
+    height: 3rem;
+    font-size: 0.9rem;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.processing-progress {
+	display: inline-block;
+	width: 20%;
+}
+
+.gauge-container {
+    width: 78%;
+    margin-left: 1%;
+}
+#gauge-meter {
+    height: 3px;
+    background-color: red;
+    width: 0%;
+}
+
+.pause-signal-container {
+	display: block;
+	opacity: 0.5;
+	margin-top: 80%;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+.provider-input-group {
+	text-align: left;
+	margin-bottom: 0.2rem;
+}
+
+
+div.provider-input-help {
+	font-size: 12px;
+	padding-left: 0.5rem;
+	color: #0a0a0be3;
+	margin-top: -6px;
+}
+
+.tags-container {
+	display: flex;
+	justify-content: space-between;
+}
+.radio-input-label {
+    display: inline;
+    font-size: 1rem !important;
+    font-weight: bold;
+    color: #00000091;
+	margin-bottom: 0.5rem;
+}
+.radio-input-label .lead-type {
+	padding-left: 1rem;
+}
+
+.message-counter {
+	position: absolute;
+    top: 7px;
+    padding: 4px 8px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #060806;
+    font-family: monospace;
+    border: #917d7d 2px solid;
+    border-radius: 15%;
+    opacity: 0.6;
+}
+
+.current-balance{
+	position: absolute;
+    top: 7px;
+    right: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #060806;
+    font-family: monospace;
+    opacity: 0.6;
+    padding: 4px 8px;
+    border: #110d0d 1px solid;
+    border-radius: 5px;
+    background: #aea9a9;
+}
+
+.accepted-messages {
+	color: #0838a5;
+	font-size: 1.3rem;
+	padding-right: 10px;
+}
+
+.failed-messages {
+	color: red;
+	font-size: 1.3rem;
+	padding-right: 10px;
+}
+
+
+.provider-container {
+	display: flex;
+	margin-top: 1.5rem;
+}
+
+.provider-account-info-container{
+	font-weight: bold;
+    line-height: 1.6rem;
+    background-color: #ecd43e42;
+    padding-left: 10px;
+    margin-left: 5px;
+    height: 100%;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    width: 30%;
+}
+
+.provider-account-info{
+	overflow-y: scroll;
+	max-height: 18rem;
+	padding-top: 10px;
+}
+
+#msform table.dynamic-account-info-table tbody tr td {
+	font-size: 12px !important;
+    line-height: 12px;
+    padding: 6px !important;
+    color: black;
+    font-family: sans-serif;
+}
+
+.shadowed {
+    -webkit-box-shadow: 6px 11px 5px 3px rgb(0 0 0 / 4%);
+    -moz-box-shadow: 6px 11px 5px 3px rgb(0 0 0 / 4%);
+    box-shadow:	6px 11px 5px 3px rgb(0 0 0 / 4%);
+}
+
+div.numberedtextarea-wrapper {
+    position: relative;
+}
+
+div.numberedtextarea-wrapper textarea {
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+div.numberedtextarea-line-numbers {
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 50px !important;
+	padding-left: 8px !important;
+    padding-top: 15px !important;
+    line-height: normal;
+    font-family: 'Montserrat' !important;
+    font-size: 1.1rem !important;
+    border-right: 5px solid rgb(0 0 0 / 3%);
+    color: #2608e4;
+    overflow: hidden;
+    background: #e6a02f1f;
+}
+
+div.numberedtextarea-number {
+    padding-right: 6px;
+    text-align: right;
+}
+
+.author {
+	text-align: center;
+    font-size: 0.7rem;
+    color: #e9c50b;
+    margin-top: -2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'dashicons';
+}
+.lead_in_result {
+	color: #0424eccc;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+#delay-timer-countdown {
+	text-align: center;
+	margin-top: 35%;
+}
+
+#delay-timer-countdown:after {
+	content: ' sec';
+}
+
+.settings_table  tbody tr th {
+    padding-left: 5px !important;
+}
+
+.pro-version-availability-notice {
+    display: block;
+    color: #f25a5a;
+    font-size: 11px;
+    font-style: italic;
+    text-align: left;
+}
+
+.Pro-licence,
+.Basic-licence {
+	color: #37e71d;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.Pro-licence {
+	color:rgb(15, 232, 236);
+}
+
+.macleen-logo-container {
+    width: 20%;  /* Set a fixed or responsive width */
+    overflow: hidden;
+}
+
+.macleen-logo-container img {
+    max-width: 100%;
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes extra space below image */
+}
+
+
+
+
+
+
+
+
+
+
+
+.macleen-tabs-box {
+	display: flex;
+	background: #000;
+	margin: auto 1% auto;
+	padding: 0;
+	width: 100%;
+}
+
+.macleen-tab-box {
+    height: 63vh;
+	padding:15px;
+	border-right: 1px solid white;
+	webkit-transition: 0.8s;
+	-o-transition: 0.8s;
+	transition: 0.8s;
+	position: relative;
+	overflow: hidden;
+	list-style: none;
+}
+
+.macleen-tab-box-detail {
+    width: 85%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top:0;
+	background: #343232;
+    color: #ffffffc2;
+    opacity: 0;
+    padding: 2%;
+    box-sizing:border-box;
+    webkit-transition: 0.8s;
+    -o-transition: 0.8s;
+    transition: 0.8s;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.macleen-tab-box.active {
+    width: 70% !important;
+}
+
+.macleen-tab-box.active .macleen-tab-box-detail {
+    opacity: 1;
+    -webkit-transition-delay: 0.6s;
+    -moz-transition-delay: 0.6s;
+    -o-transition-delay: 0.6s;
+    transition-delay: 0.6s;
+    transform: none;
+}
+
+.macleen-tab-box .macleen-box-span {
+    writing-mode: vertical-rl;
+    font-size: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    width: 40px;
+    transform: rotate(180deg);
+    font-weight: 400;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  
+}
+
+.macleen-tab-box.active .macleen-box-span {
+	left:25px;
+	right:auto;
+	margin:0;
+  font-weight:600
+}
+
+
+
+
+
+
+
+.help-page h1, h2 {
+	color: #070707;
+	overflow-wrap: break-word;
+	overflow-y: auto;
+	
+}
+.help-page ul {
+	list-style: none;
+	padding: 0;
+}
+.help-page ul li {
+	background: #191616;
+	margin: 5px 0;
+	padding: 10px;
+	border-radius: 5px;
+}
+.help-page a {
+	color: #10aad1;
+	text-decoration: none;
+	font-weight: bold;
+}
+.help-page .license {
+	padding: 15px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+.help-page .basic {
+	background: #d9f7be;
+}
+.help-page .pro {
+	background: #ffd6a5;
+}
+
+.settings-form {
+	text-align:center; 
+	border: thin gray solid;
+	border-radius:6px;
+	margin-top:1rem;
+	display:flex;
+	align-items:center;
+	justify-content:center; 
+	padding: 10px;
+}
+
+table.settings-form-table {
+	border: gray thin solid;
+	border-radius: 5px;
+}
+table.settings-form-table tbody tr td,
+table.settings-form-table tbody tr th {
+	background-color: #181a29;
+	color: #c9bbbb;
+	font-family: 'dashicons';
+}	
+
+
+
+.success {
+	color: #0edd0e;
+}
+.failed{
+	color:red;
+}
+.warning {
+	color: #f39f0e;
+}
+
+.tag-collapsible {
+    background-color: #151726d6;
+    color: #dbd820;
+    cursor: pointer;
+    padding: 5px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    background-color: #15161a;
+    border: 1px solid #2a2d3a;
+    border-radius: 5px;
+    margin-top: 1px;
+    margin-bottom: 8px;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  }
+
+  .content.open {
+    max-height: 600px; /* Adjust as needed */
+    padding: 10px;
+  }
+
+  .fs-subtitle {
+    font-weight: bold;
+  }
+
+  .fs-subtitle span {
+    color: red;
+  }

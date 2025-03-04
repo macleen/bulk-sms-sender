@@ -1,0 +1,58 @@
+{
+    "name": "plugin/plugin",
+    "type": "project",
+    "description": "Skeleton for a WP plugin.",
+    "keywords": ["wordpress", "plugin"],
+    "license": "MIT",
+    "authors": [{
+        "name": "MacLeen",
+        "email": "acutclub@gmail.com"
+    }],
+    "require": {
+        "php": "^8.2",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "aws/aws-sdk-php": "^3.281",
+        "eftec/bladeone": "^4.17",
+        "illuminate/container": "^11.41",
+        "illuminate/support": "^11.41",
+        "matomo/device-detector": "^6.4",
+        "nesbot/carbon": "^2.72",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "files": [
+            "./static/constants.php",
+            "./static/helpers.php"
+        ],        
+        "psr-4": {
+            "App\\": "core/app/",
+            "Boot\\": "core/bootstrap/",
+            "ThisPlugin\\": "this_plugin/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require-dev": {
+        "php-stubs/wordpress-stubs": "^6.7"
+    }
+}

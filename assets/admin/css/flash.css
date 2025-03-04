@@ -1,0 +1,66 @@
+/*!
+ * [flash-messenger]{@link https://github.com/emn178/flash-messenger}
+ *
+ * @version 0.3.0
+ * @author Chen, Yi-Cyuan [emn178@gmail.com]
+ * @copyright Chen, Yi-Cyuan 2016-2019
+ * @license MIT
+ */
+ 
+.flash-messages {
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    bottom: 0;    
+    width: 97.5% !important;
+    padding: 0 !important;
+}
+
+.flash-message {
+    position: relative;
+    padding: 1px 0px !important;
+    color: #fff !important;
+    border-radius: 5px;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    min-height: 8vh;
+    border: 1px solid #f2f3f6;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 8px !important;    
+}
+
+.flash-message.nonclosable .flash-message-close {
+    display: none
+}
+
+.flash-message-close {
+    float: right;
+    cursor: pointer
+}
+
+.flash-message.success {
+    background-color: #059536 !important;
+    padding: 2px 8px !important;
+}
+
+.flash-message.info,
+.flash-message.notice {
+    background-color: #026798 !important;
+    padding: 2px 8px !important;
+}
+
+.flash-message.danger,
+.flash-message.error {
+    background: #aa1b1b !important;
+    padding: 2px 8px !important;
+    margin:0 !important;
+}
+
+.flash-message.alert,
+.flash-message.warning {
+    background-color: #b27111 !important;
+    padding: 2px 8px !important;
+}
