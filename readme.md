@@ -205,6 +205,7 @@ This plugin is built on a solid mini-framework that brings modern PHP practices 
 - **Plugin Initialization**
 - **Route Controllers**
 
+---
 
 📚 For any inquiries do not hesitate to contact me on:  
 📚 MacLeen / Chokri Mahmoud  
