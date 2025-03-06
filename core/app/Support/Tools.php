@@ -138,36 +138,15 @@ class Tools {
 
 
     public static function writeTolog( mixed $data, string $label = '' ) {
-        $separator = str_pad('',80, '*').__CRLF__;
-        $log_line = $label.': '.__CRLF__;
-        $data_type = 'data-type: ';
-        switch ( true ) {
-            case $data === null             : $dt = 'NULL'.__CRLF__;
-                                              $log_line .= 'A null value'.__CRLF__;
-                                              break;
-            case is_string( $data )  : $dt = 'String'.__CRLF__;
-                                              $log_line .= $data.__CRLF__;
-                                              break;
-            case is_array( $data )   : $dt ='Array'.__CRLF__;
-                                              $log_line .= \json_encode( $data, JSON_PRETTY_PRINT ).__CRLF__;
-                                              break;
-            case is_integer( $data ) : $dt ='Integer'.__CRLF__ ;
-                                              $log_line .= $data.__CRLF__;
-                                              break;
-            case is_bool( $data )    : $dt ='Boolean'.__CRLF__ ;
-                                              $log_line .= ( $data ? 'true' : 'false').__CRLF__;
-                                              break;
-            case is_object( $data )  : $dt ='Object'.__CRLF__ ;
-                                              //$log_line .= \json_encode( get_object_vars( $data ), JSON_PRETTY_PRINT ).__CRLF__;
-                                              $log_line .= print_r($data, true).__CRLF__; // Dump object properties
-                                              break;
-            default                         : $dt = 'Unknown.'.__CRLF__;
-                                              $log_line .= \json_encode( $data, JSON_PRETTY_PRINT ).__CRLF__;
-        };
-        file_put_contents(__PLUGIN_PATH__.'___LOG___.txt', __CRLF__."$separator $data_type $dt Content: $log_line $separator".__CRLF__, FILE_APPEND );
+        $log = "********************************************************************************\n";
+        $log .= "data-type: " . gettype($data) . "\n";
+        $log .= "Content-Title: $label\n";
+        $log .= print_r($data, true); // true returns a string with keys preserved
+        $log .= "********************************************************************************\n";
+        file_put_contents(__PLUGIN_PATH__.'___LOG___.txt', __CRLF__.$log.__CRLF__, FILE_APPEND );
         // error_log( __CRLF__."$separator $data_type $dt Content: $log_line $separator".__CRLF__ );
     }
-
+    
 
     public static function get_array_element( $element, array $array, $default = null ) {
         return array_key_exists( $element, $array ) ? $array[ $element ] : $default;

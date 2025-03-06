@@ -150,6 +150,7 @@ class InfoBipProviderRepository extends ProviderRepository {
     public function get_account_info( ): WP_REST_Response {
 
         $response = $this->contact_server( $this->account_info_url );
+        Tools::writeTolog( $response, ' RESPONSE FROM get_account_info');
         return $response[ __SUCCESS__ ]
              ? WP_Response::success( $this->destructure_account_info( $response ))
              : WP_Response::error( $response[__MESSAGE__], $response[__STATUS_CODE__]);
