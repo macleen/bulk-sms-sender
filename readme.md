@@ -176,7 +176,7 @@ Well, not this time.
 
 This plugin is built on a solid mini-framework that brings modern PHP practices into WordPress development, offering a clean and scalable structure.  
   
-RxJs reactive patterns is used for the queuing system on the front end
+RxJs (reactive patterns) is used for the queuing system on the front end
 
 ---
 
