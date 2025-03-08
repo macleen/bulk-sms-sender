@@ -17,7 +17,7 @@ If you encounter any issues, please do not hesitate to contact us; we will be gl
 - [Local Settings Panel](#local-settings-panel)
 - [Rotational Messages Panel](#rotational-messages-panel)
 - [URL Linking Mode](#url-linking-mode)
-- [Leads Panel](#leads-panel)
+- [Leads Panel](#leads-panel-)
 - [Lead Line Format](#lead-line-format)
 - [Preview Summary](#preview-summary)
 - [Sending Session](#sending-session)
